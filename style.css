@@ -3,29 +3,27 @@
     padding: 0;
 }
 body{
+    height: 100vh;
+    width: 100vw;
     margin: 0;
     overflow-y: hidden;
 }
 input{
     display: none;
 }
-header{
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-}
 video{
     width: 100%;
     height: 100%;
     display: none;
     object-fit: cover;
+    position: fixed;
 }
 video.use{
     display: block;
 }
 .continer{
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -98,4 +96,19 @@ label:hover{
 .themeoption:nth-child(3){
     background: url('./background/LuffyGear5.thumbnail.png');
     background-size: cover;
+}
+
+@media(max-width: 576px){
+    #clock{
+        font-size: 50px;
+    }
+    label{
+        font-size: 20px;
+    }
+    .themelist{
+        height: 0px;
+    }
+    .themeoption{
+        height: 200px;
+    }
 }
