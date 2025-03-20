@@ -4,37 +4,43 @@
 }
 body{
     height: 100vh;
-    width: 100vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
-    overflow-y: hidden;
 }
-input{
-    display: none;
+header{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: red;
 }
 video{
     width: 100%;
-    height: 100%;
-    display: none;
+    height: 100vh;
     object-fit: cover;
-    position: fixed;
+    position: absolute;
+    display: none;
 }
 video.use{
     display: block;
 }
-.continer{
-    width: 100%;
-    height: 100%;
+.container{
+    width: 85%;
+    height: fit-content;
+    padding: 10px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    transition: 0.5s;
-}
-.continer div{
-    width: 90%;
-    max-width: 1000px;
-    padding: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
     backdrop-filter: blur(1px);
-    background-color: rgba(225,225,225,10%);
+    transition: 0.5s;
 }
 #clock{
     width: 100%;
@@ -42,6 +48,9 @@ video.use{
     font-family: monospace;
     font-weight: bold;
     text-align: center;
+}
+input{
+    display: none;
 }
 label{
     font-size: 25px;
@@ -54,22 +63,22 @@ label{
     border-radius: 5px;
     cursor: pointer;
     transition: .3s;
+    position: relative;
 }
 label:hover{
     background: rgba(225,225,225) ;
 }
 .themelist{
-    height: 0px;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 10px;
     overflow: hidden;
-    filter: opacity(0%);
     transition: 0.5s;
 }
 #theme:checked ~ .themelist{
     height: 200px;
-    filter: opacity(100%);
+    margin-top: 7px;
     transition: 0.5s;
 }
 .themeoption{
@@ -100,7 +109,7 @@ label:hover{
 
 @media(max-width: 576px){
     #clock{
-        font-size: 50px;
+        font-size: 70px;
     }
     label{
         font-size: 20px;

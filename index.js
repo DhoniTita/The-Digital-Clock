@@ -8,40 +8,39 @@ function time(){
 }
 setInterval(time, 1000)
 
-const sound1 = new Audio('./sound/Bôa - Duvet (Lyrics) [Ava0duwBsZo].mp3')
-const sound2 = new Audio('./sound/JAWNY - Honeypie (Official Video) [Wgw6tJ8yz9M].mp3')
-const sound3 = new Audio('./sound/【AKASAKI】Bunny Girl _ バニーガール（Lyric Video） [RCltAg_iK0E].mp3')
-sound1.play()
+const sound1 = new Audio
+sound1.src = './sound/Bôa - Duvet (Lyrics) [Ava0duwBsZo].mp3'
 sound1.loop = true
+sound1.play()
+
+const sound2 = new Audio
+sound2.src = './sound/JAWNY - Honeypie (Official Video) [Wgw6tJ8yz9M].mp3'
+sound2.loop = true
+
+const sound3 = new Audio
+sound3.src = './sound/【AKASAKI】Bunny Girl _ バニーガール（Lyric Video） [RCltAg_iK0E].mp3'
+sound3.loop = true
 
 function add1(){
     sound1.play()
-    sound1.loop = true
     sound2.pause()
     sound3.pause()
     document.querySelector('.use').classList.remove('use')
     document.querySelector('.o1').classList.add('use')
-    document.querySelector('.continer').classList.remove('theme2','theme3')
-    document.querySelector('.continer').classList.add('theme1')
-
 }
+
 function add2(){
     sound1.pause()
     sound2.play()
-    sound2.loop
     sound3.pause()
     document.querySelector('.use').classList.remove('use')
     document.querySelector('.o2').classList.add('use')
-    document.querySelector('.continer').classList.remove('theme1','theme3')
-    document.querySelector('.continer').classList.add('theme2')
 }
+
 function add3(){
     sound1.pause()
     sound2.pause()
     sound3.play()
-    sound3.loop
     document.querySelector('.use').classList.remove('use')
     document.querySelector('.o3').classList.add('use')
-    document.querySelector('.continer').classList.remove('theme1','theme2')
-    document.querySelector('.continer').classList.add('theme3')
 }
